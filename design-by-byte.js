@@ -152,9 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     byteDesignedDiv.appendChild(paragraph);
 
-    const footerRightDiv = document.createElement("div");
-    footerRightDiv.className = "footer__bottom-right";
-    byteDesignedDiv.appendChild(footerRightDiv);
 
     document.querySelector(".design-by-byte").appendChild(byteDesignedDiv);
     console.log('Designed by BYTE');
