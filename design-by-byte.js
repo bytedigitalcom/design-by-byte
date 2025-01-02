@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     document.querySelector(".design-by-byte").appendChild(byteDesignedDiv);
-    console.log('Designed by BYTE');
+    console.log('${byteDesigned.innerText}');
   }
 
   createByteDesignedElement();
