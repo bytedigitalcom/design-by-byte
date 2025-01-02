@@ -157,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     byteDesignedDiv.appendChild(footerRightDiv);
 
     document.querySelector(".design-by-byte").appendChild(byteDesignedDiv);
+    console.log('Designed by BYTE');
   }
 
   createByteDesignedElement();
