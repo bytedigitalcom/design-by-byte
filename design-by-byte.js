@@ -85,6 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       paragraph.appendChild(shopifyLink);
       paragraph.appendChild(document.createTextNode(` ${withShopify}`));
+
+      console.log(
+        `%cByte%c.%c ${by} %cShopify %c${withShopify}`,
+        'color: #3e478c; font-weight: bold;',
+        'color: #3ee8bb;',
+        'color: inherit;',
+        'color: #9bce39; font-weight: bold;',
+        'color: inherit;'
+      );
     } else if (lang === "ar") {
       const shopifyLink = document.createElement("a");
       shopifyLink.href = `https://bytedijital.com/tr/shopify-eticaret-yazilimi?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
@@ -115,6 +124,16 @@ document.addEventListener("DOMContentLoaded", () => {
       coloredDot.style.color = "#3EE8BB";
       coloredDot.style.textDecoration = "none";
       coloredDot.textContent = ".";
+
+      console.log(
+        `%cShopify %c${withShopify} %cByte%c. %c${by}`,
+        'color: #9bce39; font-weight: bold;',
+        'color: inherit;',
+        'color: #3e478c; font-weight: bold;',
+        'color: #3ee8bb;',
+        'color: inherit;'
+      );
+
     } else {
       paragraph.appendChild(document.createTextNode(`${by} `));
 
@@ -148,6 +167,16 @@ document.addEventListener("DOMContentLoaded", () => {
       shopifyLink.textContent = "Shopify";
 
       paragraph.appendChild(shopifyLink);
+
+      console.log(
+        `%c${by} %cByte%c. %c${withShopify} %cShopify`,
+        'color: inherit;',
+        'color: #3e478c; font-weight: bold;',
+        'color: #3ee8bb;',
+        'color: inherit;',
+        'color: #9bce39; font-weight: bold;'
+      );
+
     }
 
     byteDesignedDiv.appendChild(paragraph);
