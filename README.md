@@ -1,20 +1,23 @@
-# Design By Byte  
+# Design By Byte
 
-Hi dear Developer,  
+Hi dear Developer,
 
-This repository provides the necessary code to add the following text to a website’s footer:  
+This repository exists to supply necessary code to add this signature to your website's footer:
 
-<div id="byteDesigned">
-    <p>Designed by <strong>
-        <a href="#" target="_blank" rel="nofollow" style="color: rgb(62, 71, 140); text-decoration: none;">Byte</a>
-        <span style="color: rgb(62, 232, 187); text-decoration: none;">.</span>
-    </strong> with <a href="#" target="_blank" rel="nofollow" style="text-decoration: none; color: rgb(155, 206, 57);">Shopify</a></p>
-    <div class="footer__bottom-right"></div>
-</div>
+<div id="byteDesigned"><p>Designed by <strong><a href="#" target="_blank" rel="nofollow" style="color: rgb(62, 71, 140); text-decoration: none;">Byte</a><span style="color: rgb(62, 232, 187); text-decoration: none;">.</span></strong> with <a href="#" target="_blank" rel="nofollow" style="text-decoration: none; color: rgb(155, 206, 57);">Shopify</a></p><div class="footer__bottom-right"></div></div>
 
+## How to Use
 
-<script src="https://cdn.jsdelivr.net/gh/Byte-Dijital/design-by-byte@latest/design-by-byte.js"></script> <br><br>
+1. Add this script to the `<head>` section of your website:
 
-then add the <p style="color:purple;">desing-by-byte</p> class name to desired div for script to add the text without having problem.
+    ```html
+    <script src="https://cdn.jsdelivr.net/gh/Byte-Dijital/design-by-byte@latest/design-by-byte.js"></script>
+    ```
 
-<h2 style="underline:none;">Happy Coding!</h2>
+2. Add the `design-by-byte` class to the div where you want the signature to appear:
+
+    ```html
+    <div class="design-by-byte"></div>
+    ```
+
+Happy Coding! 🚀
