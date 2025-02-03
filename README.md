@@ -12,5 +12,5 @@ To add <div id="byteDesigned"><p>Designed by <strong><a href="#" target="_blank"
 
 then add the <p style="color:purple;">desing-by-byte</p> class name to desired div for script to add the text without having problem.
 
-<h2>Happy Coding!</h2>
+<h2 style="underline:none;">Happy Coding!</h2>
 
