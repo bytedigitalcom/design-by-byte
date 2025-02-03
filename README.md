@@ -4,7 +4,7 @@ Hi dear Developer,
 
 This repository exists to supply necessary code to add this signature to your website's footer:
 
-Designed by #### $\textsf{\color{#0969da}{Byte}}$ with #### $\textsf{\color{#218bff}{Shopify}}$
+Designed by $\textsf{\color{#0969da}{Byte}}$ with $\textsf{\color{#218bff}{Shopify}}$
 
 ## How to Use
 
