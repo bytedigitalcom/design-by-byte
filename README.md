@@ -11,7 +11,7 @@ Designed by $\textsf{\color{#0969da}{Byte}}$ with $\textsf{\color{#218bff}{Shopi
 1. Add this script to the `<head>` section of your website:
 
    ```html
-   <script src="https://cdn.jsdelivr.net/gh/Byte-Dijital/design-by-byte@latest/design-by-byte.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/Byte-digital/design-by-byte@latest/design-by-byte.js"></script>
    ```
 
 2. Add the `design-by-byte` class to the div where you want the signature to appear:
