@@ -52,14 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
     byteDesignedDiv.id = "byteDesigned";
 
     const paragraph = document.createElement("p");
-
+    const isHomepage = window.location.pathname === "/" || window.location.pathname === "";
+    const byteLinkRel = isHomepage ? "dofollow" : "nofollow";
     if (lang === "tr") {
       const byteLink = document.createElement("a");
       byteLink.href = `https://bytedigital.com/tr?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
       byteLink.style.color = "#3e478c";
       byteLink.style.textDecoration = "none";
       byteLink.target = "_blank";
-      byteLink.rel = "nofollow";
+      byteLink.rel = byteLinkRel;
       byteLink.textContent = "Byte";
 
       const strong = document.createElement("strong");
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
       byteLink.style.color = "#3e478c";
       byteLink.style.textDecoration = "none";
       byteLink.target = "_blank";
-      byteLink.rel = "nofollow";
+      byteLink.rel = byteLinkRel;
       byteLink.textContent = "Byte";
 
       const strong = document.createElement("strong");
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
       byteLink.style.color = "#3e478c";
       byteLink.style.textDecoration = "none";
       byteLink.target = "_blank";
-      byteLink.rel = "nofollow";
+      byteLink.rel = byteLinkRel;
       byteLink.textContent = "Byte";
 
       const strong = document.createElement("strong");
