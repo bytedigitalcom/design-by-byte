@@ -52,15 +52,20 @@ document.addEventListener("DOMContentLoaded", () => {
     byteDesignedDiv.id = "byteDesigned";
 
     const paragraph = document.createElement("p");
-    const isHomepage = window.location.pathname === "/" || window.location.pathname === "";
-    const byteLinkRel = isHomepage ? "dofollow" : "nofollow";
+    const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
+    const isHomepage = normalizedPath === "/";
+    const applyByteLinkRel = (link) => {
+      if (!isHomepage) {
+        link.rel = "nofollow";
+      }
+    };
     if (lang === "tr") {
       const byteLink = document.createElement("a");
       byteLink.href = `https://bytedigital.com/tr?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
       byteLink.style.color = "#3e478c";
       byteLink.style.textDecoration = "none";
       byteLink.target = "_blank";
-      byteLink.rel = byteLinkRel;
+      applyByteLinkRel(byteLink);
       byteLink.textContent = "Byte";
 
       const strong = document.createElement("strong");
@@ -104,18 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
       shopifyLink.rel = "nofollow";
       shopifyLink.textContent = "Shopify";
 
-      paragraph.appendChild(shopifyLink);
-      paragraph.appendChild(document.createTextNode(` ${withShopify}`));
-
-      paragraph.appendChild(strong);
-      paragraph.appendChild(document.createTextNode(` ${by} `));
-
       const byteLink = document.createElement("a");
       byteLink.href = `https://bytedigital.com?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
       byteLink.style.color = "#3e478c";
       byteLink.style.textDecoration = "none";
       byteLink.target = "_blank";
-      byteLink.rel = byteLinkRel;
+      applyByteLinkRel(byteLink);
       byteLink.textContent = "Byte";
 
       const strong = document.createElement("strong");
@@ -125,6 +124,14 @@ document.addEventListener("DOMContentLoaded", () => {
       coloredDot.style.color = "#3EE8BB";
       coloredDot.style.textDecoration = "none";
       coloredDot.textContent = ".";
+
+      strong.appendChild(coloredDot);
+
+      paragraph.appendChild(shopifyLink);
+      paragraph.appendChild(document.createTextNode(` ${withShopify}`));
+
+      paragraph.appendChild(strong);
+      paragraph.appendChild(document.createTextNode(` ${by} `));
 
       console.log(
         `%cShopify %c${withShopify} %cByte%c. %c${by}`,
@@ -143,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       byteLink.style.color = "#3e478c";
       byteLink.style.textDecoration = "none";
       byteLink.target = "_blank";
-      byteLink.rel = byteLinkRel;
+      applyByteLinkRel(byteLink);
       byteLink.textContent = "Byte";
 
       const strong = document.createElement("strong");
