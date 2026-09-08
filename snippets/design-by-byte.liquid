@@ -1,0 +1,92 @@
+{% liquid
+  assign site_host = request.host | default: shop.domain
+  assign language_code = request.locale.iso_code | default: localization.language.iso_code | default: 'en'
+  assign language_code = language_code | split: '-' | first
+  assign is_homepage = false
+
+  if request.page_type == 'index'
+    assign is_homepage = true
+  endif
+
+  case language_code
+    when 'tr'
+      assign by_text = 'tarafından'
+      assign with_shopify_text = 'ile tasarlanmıştır.'
+      assign byte_url = 'https://bytedigital.com/tr'
+      assign shopify_url = 'https://bytedigital.com/tr/pages/shopify-yazilim'
+    when 'cs'
+      assign by_text = 'Design od'
+      assign with_shopify_text = 'využívá'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+    when 'de'
+      assign by_text = 'Entworfen von'
+      assign with_shopify_text = 'mit'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+    when 'nl'
+      assign by_text = 'Ontworpen door'
+      assign with_shopify_text = 'met'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+    when 'fr'
+      assign by_text = 'Conçu par'
+      assign with_shopify_text = 'avec'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+    when 'es'
+      assign by_text = 'Diseñado por'
+      assign with_shopify_text = 'con'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+    when 'ar'
+      assign by_text = 'صمم بواسطة'
+      assign with_shopify_text = 'مع'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+    when 'it'
+      assign by_text = 'Progettato da'
+      assign with_shopify_text = 'con'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+    when 'ru'
+      assign by_text = 'Разработанный'
+      assign with_shopify_text = 'с помощью'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+    else
+      assign by_text = 'Designed by'
+      assign with_shopify_text = 'with'
+      assign byte_url = 'https://bytedigital.com'
+      assign shopify_url = 'https://bytedigital.com/pages/shopify-development'
+  endcase
+
+  assign utm_query = 'utm_source=referral&utm_medium=https://' | append: site_host | append: '&utm_campaign=reference'
+%}
+
+<div id="byteDesigned">
+  <p>
+    {% if language_code == 'ar' %}
+      <a href="{{ shopify_url }}?{{ utm_query }}" style="text-decoration: none; color: #9bce39;" target="_blank" rel="nofollow">Shopify</a>
+      {{ with_shopify_text }}
+      <strong>
+        <a href="{{ byte_url }}?{{ utm_query }}" style="color: #3e478c; text-decoration: none;" target="_blank"{% unless is_homepage %} rel="nofollow"{% endunless %}>Byte</a><span style="color: #3EE8BB; text-decoration: none;">.</span>
+      </strong>
+      {{ by_text }}
+    {% elsif language_code == 'tr' %}
+      <strong>
+        <a href="{{ byte_url }}?{{ utm_query }}" style="color: #3e478c; text-decoration: none;" target="_blank"{% unless is_homepage %} rel="nofollow"{% endunless %}>Byte</a><span style="color: #3EE8BB; text-decoration: none;">.</span>
+      </strong>
+      {{ by_text }}
+      <a href="{{ shopify_url }}?{{ utm_query }}" style="text-decoration: none; color: #9bce39;" target="_blank" rel="nofollow">Shopify</a>
+      {{ with_shopify_text }}
+    {% else %}
+      {{ by_text }}
+      <strong>
+        <a href="{{ byte_url }}?{{ utm_query }}" style="color: #3e478c; text-decoration: none;" target="_blank"{% unless is_homepage %} rel="nofollow"{% endunless %}>Byte</a><span style="color: #3EE8BB; text-decoration: none;">.</span>
+      </strong>
+      {{ with_shopify_text }}
+      <a href="{{ shopify_url }}?{{ utm_query }}" style="text-decoration: none; color: #9bce39;" target="_blank" rel="nofollow">Shopify</a>
+    {% endif %}
+  </p>
+</div>

@@ -2,22 +2,32 @@
 
 Hi dear Developer,
 
-This repository exists to supply necessary code to add this signature to your website's footer:
+This repository supplies a Shopify Liquid snippet for adding the footer signature:
 
 Designed by $\textsf{\color{#0969da}{Byte}}$ with $\textsf{\color{#218bff}{Shopify}}$
 
 ## How to Use
 
-1. Add this script to the `<head>` section of your website:
+1. Make sure the Shopify app has `read_themes` and `write_themes` access.
 
-   ```html
-   <script src="https://cdn.jsdelivr.net/gh/bytedigitalcom/design-by-byte@latest/design-by-byte.js"></script>
+2. During app install or onboarding, create or update this file in the active Shopify theme:
+
+   ```text
+   snippets/design-by-byte.liquid
    ```
 
-2. Add the `design-by-byte` class to the div where you want the signature to appear:
+   The helper in [`app/create-design-by-byte-snippet.server.js`](app/create-design-by-byte-snippet.server.js) can be called from the app's server-side install flow:
 
-   ```html
-   <div class="design-by-byte"></div>
+   ```js
+   import { createDesignByByteSnippet } from "./create-design-by-byte-snippet.server";
+
+   await createDesignByByteSnippet(admin);
    ```
 
-Happy Coding! 🚀
+3. Render the snippet wherever the copyright signature should appear, for example in `sections/footer.liquid`:
+
+   ```liquid
+   {% render 'design-by-byte' %}
+   ```
+
+The Byte link is dofollow on the homepage and nofollow on all other pages. The Shopify link is always nofollow.
