@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     if (lang === "tr") {
       const byteLink = document.createElement("a");
-      byteLink.href = `https://bytedigital.com/tr?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
+      byteLink.href = `https://bytedigital.com/?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
       byteLink.style.color = "#3e478c";
       byteLink.style.textDecoration = "none";
       byteLink.target = "_blank";
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       paragraph.appendChild(document.createTextNode(` ${by} `));
 
       const shopifyLink = document.createElement("a");
-      shopifyLink.href = `https://bytedigital.com/tr/pages/shopify-yazilim?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
+      shopifyLink.href = `https://bytedigital.com/shopify-yazilim?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
       shopifyLink.style.textDecoration = "none";
       shopifyLink.style.color = "#9bce39";
       shopifyLink.target = "_blank";
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     } else if (lang === "ar") {
       const shopifyLink = document.createElement("a");
-      shopifyLink.href = `https://bytedigital.com/pages/shopify-development?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
+      shopifyLink.href = `https://bytedigital.com/en/shopify-development?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
       shopifyLink.style.textDecoration = "none";
       shopifyLink.style.color = "#9bce39";
       shopifyLink.target = "_blank";
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
       shopifyLink.textContent = "Shopify";
 
       const byteLink = document.createElement("a");
-      byteLink.href = `https://bytedigital.com?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
+      byteLink.href = `https://bytedigital.com/en?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
       byteLink.style.color = "#3e478c";
       byteLink.style.textDecoration = "none";
       byteLink.target = "_blank";
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
       paragraph.appendChild(document.createTextNode(` ${withShopify} `));
 
       const shopifyLink = document.createElement("a");
-      shopifyLink.href = `https://bytedigital.com/pages/shopify-development?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
+      shopifyLink.href = `https://bytedigital.com/en/shopify-development?utm_source=referral&utm_medium=https://${currentSiteUrl}&utm_campaign=reference`;
       shopifyLink.style.textDecoration = "none";
       shopifyLink.style.color = "#9bce39";
       shopifyLink.target = "_blank";
